@@ -30,6 +30,16 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'yonchu/accelerated-smooth-scroll'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'syui/wauto.vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'tyru/open-browser.vim'
+
 
 " general setting
 " -------------------------------------
@@ -54,19 +64,24 @@ set incsearch
 set shiftwidth=4
 set tabstop=4
 set laststatus=2
+set autowrite
+
 
 " color setting
 " -----------------------------------
 colorscheme yuroyoro256
-set t_Co=256
-set t_Sf=[3%dm
-set t_Sb=[4%dm
-hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+"set t_Co=256
+"set t_Sf=[3%dm
+"set t_Sb=[4%dm
+"hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
 
 
 " key-mapping
 " ------------------------------------
-map <c-j> <esc>
+imap <C-j> <esc>
+vmap <C-j> <esc>
+
+
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <silent> <Space>o :only<CR>
 
@@ -78,8 +93,7 @@ nnoremap <silent> :us :<C-u>Unite snippet<CR>
 
 " vim shell
 nnoremap <silent> :vs :<C-u>VimShell<CR>
-nnoremap <silent> <Space>r <d-r>
-
+nnoremap <silent> <Space>r :<C-u>QuickRun -outputter/buffer/split ":botright"<CR>
 
 " neocomplcache setting
 "----------------------------------------
@@ -91,7 +105,6 @@ let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_camel_case_completion = 0 
 let g:neocomplcache_snippets_dir    = $VIM_ROOT.'/snippets'
 let g:neosnippet#snippets_directory = $VIM_ROOT.'/snippets'
-" let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_skip_auto_completion_time = '0.3'
 
 
@@ -154,5 +167,31 @@ augroup TabSize
 augroup END
 
 
+" scroll setting
+" --------------------------------------
+let g:ac_smooth_scroll_du_sleep_time_msec = 1
+let g:ac_smooth_scroll_fb_sleep_time_msec = 1 
 
 
+" yank setting
+" -------------------------------------
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+let g:yankround_max_history = 50
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+
+
+" autosave setting
+" ------------------------------------
+let g:auto_write = 1
+
+
+" Markdown setting
+" -----------------------------------
+let g:quickrun_config = {}
+let g:quickrun_config['markdown'] = {
+      \ 'outputter': 'browser'
+      \ }
