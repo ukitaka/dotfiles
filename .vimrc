@@ -6,8 +6,18 @@ set nocompatible
 filetype off
 filetype plugin indent off
 
+" NeoBundle
+" -------------------------------------
 if has('vim_starting')
-  set runtimepath+=$VIM_ROOT/bundle/neobundle.vim/
+    if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
+        echo "install neobundle..."
+        :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
+    endif
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+if has('vim_starting')
+    set runtimepath+=$VIM_ROOT/bundle/neobundle.vim/
 endif
 call neobundle#rc(expand($VIM_ROOT.'/bundle'))
 
@@ -23,6 +33,7 @@ NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' :
 NeoBundle 'Shougo/vimshell', {'depends' : 'Shougo/vimproc' }
 NeoBundle 'neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle "Shougo/neosnippet-snippets"
 NeoBundle 'unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'yuroyoro/yuroyoro256.vim'
@@ -90,9 +101,6 @@ nnoremap <silent> :uf :<C-u>Unite -buffer-name=files file file/new<CR>
 nnoremap <silent> :ub :<C-u>Unite buffer<CR>
 nnoremap <silent> :ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> :us :<C-u>Unite snippet<CR>
-
-" vim shell
-nnoremap <silent> :vs :<C-u>VimShell<CR>
 nnoremap <silent> <Space>r :<C-u>QuickRun -outputter/buffer/split ":botright"<CR>
 
 " neocomplcache setting
@@ -118,29 +126,29 @@ imap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ?  "\<
 smap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+    set conceallevel=2 concealcursor=i
 endif
 
 
 " lightline setting
 " --------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+            \ },
+            \ 'separator': { 'left': '⮀', 'right': '⮂' },
+            \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+            \ }
 
 " highlight focused
 " ---------------------------------------
@@ -193,5 +201,5 @@ let g:auto_write = 1
 " -----------------------------------
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
-      \ 'outputter': 'browser'
-      \ }
+            \ 'outputter': 'browser'
+            \ }
