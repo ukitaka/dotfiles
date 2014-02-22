@@ -1,0 +1,102 @@
+snippet :f
+	${1:method_name}: function(${2:attribute}){
+		${0}
+	}
+
+snippet func
+alias   function
+	function (${1}) {
+		${0}
+	}
+
+snippet proto
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
+		${0:// body...}
+	};
+
+
+snippet f
+    function (${1}) {${0:$TM_SELECTED_TEXT}}
+
+snippet if
+    if (${1:true}) {
+        ${0}
+    }
+
+
+snippet ife
+    if (${1:true}) {${0:$TM_SELECTED_TEXT}} else{}
+
+snippet for
+	for (${1}=0; $1<${2}; $1++) {
+		${0}
+	}
+
+snippet forin
+	for (var ${2:i} in ${1:Things}) {
+		${0}
+	}
+
+snippet ;,
+    ${1:value_name}:${0:value},
+
+
+snippet key
+    ${1:key}: "${2:value}"}${3:, }
+
+
+snippet timeout
+    setTimeout(function() {${0}}${2:}, ${1:10});
+
+snippet us
+    'use strict';
+
+snippet lg
+    console.log(${1});${0}
+
+snippet describe
+    describe("${1}", function () {
+        ${2}
+
+        beforeEach(function () {
+            ${3}
+        });
+
+        ${4}
+
+    });
+
+snippet it
+    it("${1}", function () {
+        ${2}
+    });
+
+snippet doc
+    /**
+     * ${1}
+     *
+     */
+
+snippet param
+    @param {${1}} ${2}
+
+snippet returns
+    @returns {${1}} ${2}
+
+snippet prop
+alias   property
+    @property {${1}} ${2}
+
+snippet module
+    (function(define) {
+    define([], function() {
+    
+        ${0}
+    
+    });
+    })(typeof define !== 'undefined' ?
+        define :
+        typeof module !== 'undefined' ?
+        function(deps, factory) { module.exports = factory(); } :
+        function(deps, factory) { this['${1}'] = factory(); }
+    );

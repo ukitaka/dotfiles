@@ -1,0 +1,98 @@
+include c.snip
+
+snippet     template
+abbr        template <T>
+    template<typename ${1}>
+
+snippet     class
+abbr        class {}
+    class ${1} {
+
+    // constructor, destructor
+    public:
+        $1() = default;
+        virtual ~$1() = default;
+
+    private:
+        $1(const $1&) = delete;
+        $1($1&&) = delete;
+
+    // operator
+    public:
+
+    private:
+        $1& operator=(const $1&) = delete;
+        $1& operator=($1&&) = delete;
+
+    // property
+    public:
+
+    private:
+
+    // manipulation
+    public:
+
+    private:
+
+    // member
+    public:
+
+    private:
+
+    };
+
+snippet     pod
+abbr        class {}
+    class ${1} {
+
+    // constructor, destructor
+    public:
+        $1() = default;
+        $1(const $1&) = default;
+        $1($1&&) = default;
+        virtual ~$1() = default;
+
+    // operator
+    public:
+        $1& operator=(const $1&) = default;
+        $1& operator=($1&&) = default;
+
+    // property
+    public:
+
+    // manipulation
+    public:
+
+    // member
+    public:
+
+    };
+
+snippet     try
+abbr        try catch
+    try {
+        ${1}
+    } catch (${2:exception}) {
+        ${3}
+    }
+
+# range based for ( C++11 feature )
+snippet     for_CPP11
+abbr        for (:) {}
+    for (${1} : ${2}) {
+        ${0}
+    }
+
+# lambda expression ( C++11 feature )
+snippet     lambda
+abbr        [](){}
+    [${1}](${2})${3}{ ${4} }
+
+# scoped enumeration ( C++11 feature )
+snippet     enum_scoped
+abbr        enum struct {}
+    enum struct { ${1} }
+
+snippet     un
+abbr        using namespace
+    using namespace ${1}
