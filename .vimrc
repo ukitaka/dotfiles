@@ -1,5 +1,3 @@
-scriptencoding utf-8
-
 let $VIM_ROOT=$HOME.'/.vim'
 set nocompatible
 
@@ -13,14 +11,10 @@ if has('vim_starting')
         echo "install neobundle..."
         :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
     endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-
-if has('vim_starting')
     set runtimepath+=$VIM_ROOT/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand($VIM_ROOT.'/bundle'))
 
+call neobundle#rc(expand($VIM_ROOT.'/bundle'))
 set termencoding=utf-8
 set encoding=utf-8
 set fenc=utf-8
@@ -41,7 +35,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'yonchu/accelerated-smooth-scroll'
+"NeoBundle 'yonchu/accelerated-smooth-scroll'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'kien/ctrlp.vim'
@@ -50,7 +44,9 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tyru/open-browser.vim'
-
+NeoBundle 't9md/vim-choosewin'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 
 " general setting
 " -------------------------------------
@@ -91,12 +87,15 @@ colorscheme yuroyoro256
 " ------------------------------------
 imap <C-j> <esc>
 vmap <C-j> <esc>
-
+imap <C-f> <right>
+imap <C-b> <left>
+imap <C-a> <Home>
 
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <silent> <Space>o :only<CR>
 
 " unite
+" ------------------------------------
 nnoremap <silent> :uf :<C-u>Unite -buffer-name=files file file/new<CR>
 nnoremap <silent> :ub :<C-u>Unite buffer<CR>
 nnoremap <silent> :ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
@@ -177,8 +176,15 @@ augroup END
 
 " scroll setting
 " --------------------------------------
-let g:ac_smooth_scroll_du_sleep_time_msec = 1
-let g:ac_smooth_scroll_fb_sleep_time_msec = 1 
+"let g:ac_smooth_scroll_du_sleep_time_msec = 1
+"let g:ac_smooth_scroll_fb_sleep_time_msec = 1 
+
+
+" choosewin
+" -------------------------------------
+nmap - <Plug>(choosewin)                     " - でchoosewinを開く
+let g:choosewin_overlay_enable = 1           " オーバーレイ機能を有効にする。
+let g:choosewin_overlay_clear_multibyte = 1  " オーバーレイ時、マルチバイト文字を含むバッファで、ラベル文字が崩れるのを防ぐ
 
 
 " yank setting
