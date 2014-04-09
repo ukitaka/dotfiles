@@ -44,7 +44,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 't9md/vim-choosewin'
+"NeoBundle 't9md/vim-choosewin'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 
