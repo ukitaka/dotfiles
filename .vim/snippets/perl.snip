@@ -6,6 +6,16 @@ snippet perl
     use utf8;
 	${1}
 
+snippet perlm
+    package ${1:package}
+
+	use strict;
+	use warnings;
+    use utf8;
+
+    1;
+
+
 snippet sub
 	sub ${1:function_name} {
 		${2:# body...}
