@@ -42,6 +42,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'syui/wauto.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 't9md/vim-choosewin'
@@ -114,7 +115,6 @@ let g:neocomplcache_snippets_dir    = $VIM_ROOT.'/snippets'
 let g:neosnippet#snippets_directory = $VIM_ROOT.'/snippets'
 let g:neocomplcache_skip_auto_completion_time = '0.3'
 
-
 " neosnippet setting
 "----------------------------------------
 nnoremap <silent> :ns :NeoSnippetEdit<CR>
@@ -164,6 +164,7 @@ augroup TabSize
     autocmd! TabSize
     autocmd BufNew,BufRead,WinEnter *.zshrc  setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.rb     setlocal ts=2 sw=2 sts=2
+    autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
     autocmd BufNew,BufRead,WinEnter *.erb    setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.html   setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.java   setlocal ts=4 sw=4 sts=4
