@@ -1,20 +1,15 @@
 snippet perl 
-	#!/bin/perl
-
 	use strict;
 	use warnings;
     use utf8;
 	${1}
 
-snippet perlm
-    package ${1:package}
-
+snippet perlm 
+    package ${1:package};
 	use strict;
 	use warnings;
     use utf8;
-
-    1;
-
+	${2:body...}
 
 snippet sub
 	sub ${1:function_name} {

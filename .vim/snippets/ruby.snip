@@ -59,3 +59,19 @@ snippet     urlencode
     # coding: utf-8
     require 'erb'
     puts ERB::Util.url_encode '${1}'
+
+snippet     podfile
+    platform :ios, '7.0'
+
+    inhibit_all_warnings!
+
+    pod 'AFNetworking'
+    pod 'AFNetworkActivityLogger'
+    pod 'SDWebImage'
+    pod 'UIActivityIndicator-for-SDWebImage'
+    pod 'GoogleAnalytics-iOS-SDK'
+
+    target :UnitTest do
+        pod 'GHUnit'
+        pod 'OCMock', '~> 2.0.1'
+    end

@@ -34,6 +34,9 @@ NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'y-uuki/unite-perl-module.vim'
+"NeoBundle 'y-uuki/perl-local-lib-path.vim'
+"NeoBundle 'ukitaka/syntastic-perl-inc'
 NeoBundle 'tpope/vim-markdown'
 "NeoBundle 'yonchu/accelerated-smooth-scroll'
 NeoBundle 'osyo-manga/vim-over'
@@ -48,6 +51,7 @@ NeoBundle 'tyru/open-browser.vim'
 "NeoBundle 't9md/vim-choosewin'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'motemen/xslate-vim'
 
 " general setting
 " -------------------------------------
@@ -172,7 +176,15 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.ejs    setlocal ts=2 sw=2 sts=2 filetype=html
     autocmd BufNew,BufRead,WinEnter *.coffee setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.pl     setlocal ts=4 sw=4 sts=4
+    autocmd BufNew,BufRead,WinEnter *.pm     setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.t     setlocal ts=4 sw=4 sts=4 filetype=perl
 augroup END
+
+
+" perl Carton setting
+" -------------------------------------
+"autocmd FileType perl SyntasticLoadLocalPerlModules
 
 
 " scroll setting
