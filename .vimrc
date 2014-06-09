@@ -81,7 +81,9 @@ set autowrite
 
 " color setting
 " -----------------------------------
-colorscheme yuroyoro256
+if isdirectory(expand("~/.vim/bundle/yuroyoro256.vim"))
+      color yuroyoro256
+endif
 "set t_Co=256
 "set t_Sf=[3%dm
 "set t_Sb=[4%dm
