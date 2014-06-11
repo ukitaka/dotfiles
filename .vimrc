@@ -224,3 +224,8 @@ let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
             \ 'outputter': 'browser'
             \ }
+
+" Syntastic
+" -----------------------------------
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'podchecker']
