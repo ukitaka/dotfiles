@@ -32,14 +32,7 @@ NeoBundle 'unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'y-uuki/unite-perl-module.vim'
-"NeoBundle 'y-uuki/perl-local-lib-path.vim'
-"NeoBundle 'ukitaka/syntastic-perl-inc'
-NeoBundle 'tpope/vim-markdown'
-"NeoBundle 'yonchu/accelerated-smooth-scroll'
-NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'syui/wauto.vim'
@@ -48,10 +41,11 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tyru/open-browser.vim'
-"NeoBundle 't9md/vim-choosewin'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'motemen/xslate-vim'
+NeoBundle 'thinca/vim-localrc'
+NeoBundle "tyru/caw.vim"
 
 " general setting
 " -------------------------------------
@@ -77,7 +71,6 @@ set shiftwidth=4
 set tabstop=4
 set laststatus=2
 set autowrite
-
 
 " color setting
 " -----------------------------------
@@ -180,27 +173,8 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.pl     setlocal ts=4 sw=4 sts=4
     autocmd BufNew,BufRead,WinEnter *.pm     setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
-    autocmd BufNew,BufRead,WinEnter *.t     setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
 augroup END
-
-
-" perl Carton setting
-" -------------------------------------
-"autocmd FileType perl SyntasticLoadLocalPerlModules
-
-
-" scroll setting
-" --------------------------------------
-"let g:ac_smooth_scroll_du_sleep_time_msec = 1
-"let g:ac_smooth_scroll_fb_sleep_time_msec = 1 
-
-
-" choosewin
-" -------------------------------------
-nmap - <Plug>(choosewin)                     " - でchoosewinを開く
-let g:choosewin_overlay_enable = 1           " オーバーレイ機能を有効にする。
-let g:choosewin_overlay_clear_multibyte = 1  " オーバーレイ時、マルチバイト文字を含むバッファで、ラベル文字が崩れるのを防ぐ
-
 
 " yank setting
 " -------------------------------------
@@ -218,9 +192,7 @@ nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
 let g:auto_write = 1
 
 
-" Markdown setting
-" -----------------------------------
-let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
-            \ 'outputter': 'browser'
-            \ }
+" caw setting
+" ------------------------------------
+nmap <C-i> <Plug>(caw:i:toggle)
+vmap <C-i> <Plug>(caw:i:toggle)
