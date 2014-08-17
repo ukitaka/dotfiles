@@ -1,0 +1,31 @@
+platform :ios, '7.0'
+
+inhibit_all_warnings!
+
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'Parse'
+pod 'Bolts'
+pod 'TestFlightSDK'
+pod 'CrittercismSDK'
+pod 'MagicalRecord', :git => "https://github.com/magicalpanda/MagicalRecord.git", :tag => 'v2.3.0-beta.3'
+pod 'MBProgressHUD'
+pod 'YLMoment'
+pod 'TSMessages'
+pod 'CocoaLumberjack'
+pod 'MCSwipeTableViewCell'
+pod 'Colours'
+pod 'RMStore'
+pod 'JLRoutes'
+pod 'OHHTTPStubs'
+pod 'ISRefreshControl'
+pod 'MTMigration'
+pod 'YKFile'
+pod 'LUKeyChainAccess'
+
+# hooks
+ # auto generate Acknowledgements.plist with install and update
+ post_install do | installer |
+   require 'fileutils'
+   FileUtils.cp_r('Pods/Pods-acknowledgements.plist', 'Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+ end
