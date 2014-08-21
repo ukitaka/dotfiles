@@ -12,16 +12,27 @@ pod 'MagicalRecord', :git => "https://github.com/magicalpanda/MagicalRecord.git"
 pod 'MBProgressHUD'
 pod 'YLMoment'
 pod 'TSMessages'
-pod 'CocoaLumberjack'
 pod 'MCSwipeTableViewCell'
 pod 'Colours'
 pod 'RMStore'
 pod 'JLRoutes'
-pod 'OHHTTPStubs'
 pod 'ISRefreshControl'
 pod 'MTMigration'
 pod 'YKFile'
 pod 'LUKeyChainAccess'
+pod 'CocoaLumberjack'
+
+# pending
+pod 'FrameAccessor'
+pod 'BlocksKit' 
+pod 'CWStatusBarNotification'
+
+# debug
+target :debug do
+  pod 'Reveal-iOS-SDK'
+  pod 'OHHTTPStubs'
+  pod 'AFNetworkActivityLogger'
+end
 
 # hooks
  # auto generate Acknowledgements.plist with install and update
