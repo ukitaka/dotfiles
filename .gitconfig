@@ -1,0 +1,15 @@
+[user]
+	name = ukitaka
+	email = yuki.takahashi.1126@gmail.com
+
+[color]
+    ui = auto
+
+[alias]
+    co   = checkout
+    cb   = checkout -b
+    cam  = commit --amend
+    hist = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d'
+    st   = status
+    df   = diff
+
