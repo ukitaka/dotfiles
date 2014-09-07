@@ -1,0 +1,75 @@
+[user]
+	name = yuki.takahashi
+	email = yuki.takahashi.1126@gmail.com
+
+[core]
+    editor = vim
+    autocrlf = input
+
+[http]
+      sslVerify = false
+
+[color]
+    ui = auto
+
+[alias]
+  # 
+    cam  = commit --amend
+    st   = status
+    df   = diff
+    po   = push origin
+    mgn  = merge --no-ff
+
+  # log
+    oneline = log --pretty=oneline
+    hist = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d'
+    log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+    log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+
+  # checkout 
+    co   = checkout
+    cb   = checkout -b
+
+  # diff
+    di = diff
+    dm = diff master           # masterとのdiff
+    dd = diff develop          # developとのdiff
+    dc = diff --cached         # addされているものとのdiff
+    ds = diff --staged         # addされているものとのdiff
+    d1 = diff HEAD~            # HEADから1つ前とdiff
+    d2 = diff HEAD~~           # HEADから2つ前とdiff
+    d3 = diff HEAD~~~          # HEADから3つ前とdiff
+    d4 = diff HEAD~~~~         # HEADから4つ前とdiff
+    d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
+
+  # rebase
+    continue = rebase --continue
+    abort    = rebase --abort
+    rbi = rebase -i
+    rbi1 = rebase -i HEAD^
+    rbi2 = rebase -i HEAD^^
+    rbi3 = rebase -i HEAD^^^
+    rbi4 = rebase -i HEAD^^^^
+    rbi5 = rebase -i HEAD^^^^^
+
+  # reset
+    r    = reset HEAD
+    r1   = reset HEAD~
+    r2   = reset HEAD~~
+    r3   = reset HEAD~~~
+    r4   = reset HEAD~~~~
+    r5   = reset HEAD~~~~~
+    rh   = reset --hard HEAD
+    rh1  = reset --hard HEAD~
+    rh2  = reset --hard HEAD~~
+    rh3  = reset --hard HEAD~~~
+    rh4  = reset --hard HEAD~~~~
+    rh5  = reset --hard HEAD~~~~~
+
+  # cherry-pick
+    cp   = cherry-pick
+
+  # hub
+    br   = browse
+    plrq = pull-request
+    cmp  = compare
