@@ -30,7 +30,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle "Shougo/neosnippet-snippets"
 NeoBundle 'unite.vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'yuroyoro/yuroyoro256.vim'
+"NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'LeafCage/yankround.vim'
@@ -46,6 +46,8 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle "tyru/caw.vim"
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 " general setting
 " -------------------------------------
@@ -74,9 +76,10 @@ set autowrite
 
 " color setting
 " -----------------------------------
-if isdirectory(expand("~/.vim/bundle/yuroyoro256.vim"))
-      color yuroyoro256
-endif
+"color yuroyoro256
+set background=dark
+"colorscheme Tomorrow-Night
+colorscheme hybrid
 "set t_Co=256
 "set t_Sf=[3%dm
 "set t_Sb=[4%dm
