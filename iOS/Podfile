@@ -21,6 +21,7 @@ pod 'MTMigration'
 pod 'YKFile'
 pod 'LUKeyChainAccess'
 pod 'CocoaLumberjack'
+pod 'RegExCategories'
 
 # pending
 pod 'FrameAccessor'
