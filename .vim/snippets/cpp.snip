@@ -41,6 +41,19 @@ abbr        class {}
 
     };
 
+snippet includ
+alias   #inc, #include
+    #include <iostream>
+    #include <stdlib.h>
+    
+    using namespace std;
+    
+    int main() {
+        ${0}        
+    
+        return 0;
+    }
+
 snippet     pod
 abbr        class {}
     class ${1} {
