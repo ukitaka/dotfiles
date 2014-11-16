@@ -4,3 +4,4 @@ set smartcase
 
 imap <C-j> <esc>
 vmap <C-j> <esc>
+nmap == ==<CR>
