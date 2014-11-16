@@ -25,6 +25,7 @@ set fenc=utf-8
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'} }
 NeoBundle 'Shougo/vimshell', {'depends' : 'Shougo/vimproc' }
+NeoBundle 'Shougo/vinarise'
 NeoBundle 'neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle "Shougo/neosnippet-snippets"
@@ -48,6 +49,21 @@ NeoBundle 'thinca/vim-localrc'
 NeoBundle "tyru/caw.vim"
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'basyura/unite-rails'
+
+NeoBundleLazy 'alpaca-tc/alpaca_tags', {
+            \    'depends': ['Shougo/vimproc'],
+            \    'autoload' : {
+            \       'commands' : [
+            \          { 'name' : 'AlpacaTagsBundle', 'complete': 'customlist,alpaca_tags#complete_source' },
+            \          { 'name' : 'AlpacaTagsUpdate', 'complete': 'customlist,alpaca_tags#complete_source' },
+            \          'AlpacaTagsSet', 'AlpacaTagsCleanCache', 'AlpacaTagsEnable', 'AlpacaTagsDisable', 'AlpacaTagsKillProcess', 'AlpacaTagsProcessStatus',
+            \       ],
+            \    }
+            \ }
+
 
 " general setting
 " -------------------------------------
@@ -93,6 +109,7 @@ vmap <C-j> <esc>
 imap <C-f> <right>
 imap <C-b> <left>
 imap <C-a> <Home>
+map == ==<CR>
 
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <silent> <Space>o :only<CR>
@@ -103,6 +120,9 @@ nnoremap <silent> :uf :<C-u>Unite -buffer-name=files file file/new<CR>
 nnoremap <silent> :ub :<C-u>Unite buffer<CR>
 nnoremap <silent> :ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> :us :<C-u>Unite snippet<CR>
+nnoremap <silent> :urc :<C-u>Unite rails/controller<CR>
+nnoremap <silent> :urm :<C-u>Unite rails/model<CR>
+nnoremap <silent> :urv :<C-u>Unite rails/view<CR>
 nnoremap <silent> <Space>r :<C-u>QuickRun -outputter/buffer/split ":botright"<CR>
 
 " neocomplcache setting
@@ -177,6 +197,25 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.pm     setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.gradle setlocal ts=4 sw=4 sts=4 filetype=groovy
+augroup END
+
+" tags
+" ------------------------------------
+let g:alpaca_tags#config = {
+            \    '_' : '-R --sort=yes',
+            \    'ruby': '--languages=+Ruby',
+            \ }
+
+augroup AlpacaTags
+    autocmd!
+    if exists(':AlpacaTags')
+        autocmd BufWritePost   Gemfile  silent AlpacaTagsBundle
+        autocmd BufWritePost   Podfile  silent AlpacaTagsBundle
+        autocmd BufWritePost   Cpanfile silent AlpacaTagsBundle
+        autocmd BufEnter     * silent AlpacaTagsSet
+        autocmd BufWritePost * silent AlpacaTagsUpdate
+    endif
 augroup END
 
 " yank setting
@@ -204,6 +243,14 @@ let g:syntastic_perl_checkers = ['perl', 'podchecker']
 " ------------------------------------
 nmap <C-i> <Plug>(caw:i:toggle)
 vmap <C-i> <Plug>(caw:i:toggle)
+
+" rails
+" -----------------------------------
+nmap :<C-u>rc :<C-u>Rcontroller
+nmap :<C-u>rm :<C-u>Rmodel
+nmap :<C-u>rv :<C-u>Rview
+
+
 
 
 " tab setting
