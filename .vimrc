@@ -52,6 +52,8 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'basyura/unite-rails'
+NeoBundle 'rhysd/committia.vim'
+NeoBundle '5t111111/neat-json.vim'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -187,6 +189,8 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.zshrc  setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.rb     setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
+    autocmd BufNew,BufRead,WinEnter Gemfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
+    autocmd BufNew,BufRead,WinEnter Rakefile setlocal ts=2 sw=2 sts=2 filetype=ruby
     autocmd BufNew,BufRead,WinEnter *.erb    setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.html   setlocal ts=2 sw=2 sts=2
     autocmd BufNew,BufRead,WinEnter *.java   setlocal ts=4 sw=4 sts=4
@@ -198,6 +202,7 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.gradle setlocal ts=4 sw=4 sts=4 filetype=groovy
+    autocmd BufNew,BufRead,WinEnter *.yml    setlocal ts=2 sw=2 sts=2 filetype=yml
 augroup END
 
 " tags
