@@ -54,6 +54,9 @@ NeoBundle 'tpope/vim-bundler'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle '5t111111/neat-json.vim'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'gre/play2vim'
+NeoBundle 'derekwyatt/vim-sbt'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -243,6 +246,7 @@ let g:auto_write = 1
 " -----------------------------------
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl', 'podchecker']
+let g:syntastic_ignore_files = ['\m\.sbt$']
 
 " caw setting
 " ------------------------------------
