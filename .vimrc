@@ -57,6 +57,12 @@ NeoBundle '5t111111/neat-json.vim'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'gre/play2vim'
 NeoBundle 'derekwyatt/vim-sbt'
+NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'pbrisbin/vim-syntax-shakespeare'
+NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'eagletmt/unite-haddock'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
