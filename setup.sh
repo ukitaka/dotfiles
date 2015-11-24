@@ -1,6 +1,10 @@
 #!/bin/bash
 
-DOT_FILES=( .zshrc .vimrc .vim .gvimrc .xvimrc .tmux.conf .ideavimrc .gitconfig .gitignore)
+if [ "$(uname)" == 'Darwin' ]; then
+    DOT_FILES=( .zshrc .zshrc.mac .vimrc .vim .gvimrc .xvimrc .tmux.conf .ideavimrc .gitconfig .gitignore)
+else
+    DOT_FILES=( .zshrc .vimrc .vim .gvimrc .xvimrc .tmux.conf .ideavimrc .gitconfig .gitignore)
+fi
 
 for file in ${DOT_FILES[@]}
 do

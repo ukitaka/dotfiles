@@ -23,7 +23,6 @@ alias ls="ls -GF"
 alias gls="gls --color"
 
 # git 
-eval "$(hub alias -s)"
 alias g="git"
 alias gst="git status"
 alias gdf="git diff"
@@ -51,7 +50,11 @@ theme_precmd () {
 }
 
 setopt prompt_subst
-PROMPT='%B%F{green}[%m] %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
+PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd  theme_precmd
+
+# zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.zshrc.mac ] && source ~/.zshrc.mac

@@ -1,0 +1,11 @@
+# heroku
+# export PATH="/usr/local/heroku/bin:$PATH"
+
+# ctags
+alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+
+# ruby
+eval "$(rbenv init -)"
+
+# haskell
+export PATH="~/.cabal/bin:$PATH"
