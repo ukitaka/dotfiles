@@ -9,3 +9,7 @@ eval "$(rbenv init -)"
 
 # haskell
 export PATH="~/.cabal/bin:$PATH"
+
+# go
+export GOPATH="$HOME/.go"
+export PATH="$PATH:$GOPATH/bin"
