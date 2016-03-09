@@ -14,7 +14,8 @@ if has('vim_starting')
     set runtimepath+=$VIM_ROOT/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand($VIM_ROOT.'/bundle'))
+call neobundle#begin(expand($VIM_ROOT.'/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 set termencoding=utf-8
 set encoding=utf-8
 set fenc=utf-8
@@ -22,7 +23,6 @@ set fenc=utf-8
 " plugin
 " --------------------------------------
 
-NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'} }
 NeoBundle 'Shougo/vimshell', {'depends' : 'Shougo/vimproc' }
 NeoBundle 'Shougo/vinarise'
@@ -75,6 +75,7 @@ NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    }
             \ }
 
+call neobundle#end()
 
 " general setting
 " -------------------------------------
