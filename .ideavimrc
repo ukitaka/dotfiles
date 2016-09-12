@@ -1,2 +1,7 @@
 imap <c-j> <esc>
 vmap <c-j> <esc>
+
+imap <C-f> <Right>
+imap <C-b> <Left>
+imap <C-p> <up>
+imap <C-n> <down>
