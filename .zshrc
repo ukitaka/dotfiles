@@ -28,9 +28,6 @@ alias gst="git status"
 alias gdf="git diff"
 alias glg="git log-all"
 
-# path
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-
 # theme
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' stagedstr '%F{green}●'
@@ -48,6 +45,7 @@ theme_precmd () {
 
     vcs_info
 }
+
 
 setopt prompt_subst
 PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
