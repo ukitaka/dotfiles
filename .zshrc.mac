@@ -1,15 +1,10 @@
-# heroku
-# export PATH="/usr/local/heroku/bin:$PATH"
+if [ -d $HOME/.anyenv ]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
 
-# ctags
-alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+# tools
+if [ -d $HOME/Development/tools/bin ]; then
+  export PATH="$HOME/Development/tools/bin:$PATH"
+fi
 
-# ruby
-eval "$(rbenv init -)"
-
-# haskell
-export PATH="~/.cabal/bin:$PATH"
-
-# go
-export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOPATH/bin"

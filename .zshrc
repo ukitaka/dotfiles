@@ -1,12 +1,12 @@
-# oh-my-zsh
-ZSH=$HOME/.oh-my-zsh
-plugins=(brew git github history)
-source $ZSH/oh-my-zsh.sh
+if [[ -f $HOME/.setting/lib/zplug/init.zsh ]]; then
+  source ~/.setting/lib/zplug/init.zsh
+fi
 
 # load
 autoload -U compinit && compinit
 autoload -U colors && colors
-
+autoload -U add-zsh-hook
+add-zsh-hook precmd  theme_precmd
 
 # General Settings
 export EDITOR=vim        # エディタをvimに設定
@@ -24,6 +24,7 @@ alias gls="gls --color"
 
 # git 
 alias g="git"
+alias gti="git"
 alias gst="git status"
 alias gdf="git diff"
 alias glg="git log-all"
@@ -46,13 +47,11 @@ theme_precmd () {
     vcs_info
 }
 
-
 setopt prompt_subst
 PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
-
-autoload -U add-zsh-hook
-add-zsh-hook precmd  theme_precmd
 
 # zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
+
+
