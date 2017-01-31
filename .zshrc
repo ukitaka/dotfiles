@@ -1,12 +1,43 @@
-if [[ -f $HOME/.setting/lib/zplug/init.zsh ]]; then
-  source ~/.setting/lib/zplug/init.zsh
+#opt
+setopt auto_menu
+setopt correct
+setopt auto_name_dirs
+setopt auto_remove_slash
+setopt extended_history
+setopt hist_ignore_dups
+setopt pushd_ignore_dups
+setopt rm_star_silent
+setopt sun_keyboard_hack
+setopt extended_glob
+setopt hist_ignore_all_dups
+setopt no_beep
+setopt sh_word_split
+setopt auto_param_keys
+setopt auto_pushd
+setopt list_packed
+setopt list_types
+setopt no_case_glob
+setopt complete_in_word
+setopt prompt_subst
+PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
+
+if [[ -f $HOME/.zplug/init.zsh ]]; then
+  source ~/.zplug/init.zsh
+
+  # plugins
+  zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
+  zplug "zsh-users/zsh-completions"
+  zplug "zsh-users/zsh-history-substring-search"
+  zplug "plugins/brew",    from:oh-my-zsh, if:"which brew"
+  zplug "plugins/tmux",    from:oh-my-zsh, if:"which tmux"
+
+  zplug load
 fi
 
 # load
 autoload -U compinit && compinit
 autoload -U colors && colors
 autoload -U add-zsh-hook
-add-zsh-hook precmd  theme_precmd
 
 # General Settings
 export EDITOR=vim        # エディタをvimに設定
@@ -47,11 +78,9 @@ theme_precmd () {
     vcs_info
 }
 
-setopt prompt_subst
-PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
+add-zsh-hook precmd  theme_precmd
 
 # zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
-
 
