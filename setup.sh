@@ -16,3 +16,12 @@ done
 [ ! -d ~/.zplug ] && curl -sL zplug.sh/installer | zsh
 [ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim && vim -c ':NeoBundleInstall'
 
+
+# for mac
+[ ! "$(uname)" == 'Darwin' ] && exit 0
+
+# Homebrew
+if ! type brew >/dev/null 2>&1; then
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
