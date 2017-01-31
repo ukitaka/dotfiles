@@ -28,6 +28,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-history-substring-search"
+  zplug "plugins/history", from:oh-my-zsh
   zplug "plugins/brew",    from:oh-my-zsh, if:"which brew"
   zplug "plugins/tmux",    from:oh-my-zsh, if:"which tmux"
 
