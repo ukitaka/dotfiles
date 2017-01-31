@@ -1,5 +1,5 @@
 [user]
-	name = yuki.takahashi
+	name = ukitaka
 	email = yuki.takahashi.1126@gmail.com
 
 [core]
@@ -7,7 +7,7 @@
     autocrlf = input
 
 [http]
-      sslVerify = false
+    sslVerify = false
 
 [color]
     ui = auto
@@ -73,3 +73,5 @@
     br   = browse
     plrq = pull-request
     cmp  = compare
+
+    sd   = !git stash -u && git stash drop
