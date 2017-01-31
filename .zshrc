@@ -26,13 +26,18 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
 
   # plugins
   zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
+  zplug "mollifier/cd-gitroot"
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-history-substring-search"
   zplug "plugins/history", from:oh-my-zsh
   zplug "plugins/brew",    from:oh-my-zsh, if:"which brew"
   zplug "plugins/tmux",    from:oh-my-zsh, if:"which tmux"
 
-  zplug load
+  if ! zplug check; then
+    zplug install
+  fi
+
+  zplug load --verbose
 fi
 
 # load

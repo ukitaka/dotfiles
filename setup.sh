@@ -16,9 +16,6 @@ done
 [ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim && vim -c ':NeoBundleInstall'
 [ ! -d ~/.zplug ] && curl -sL zplug.sh/installer | zsh
 
-# install zplug plugins
-zplug install
-
 # for mac
 [ ! "$(uname)" == 'Darwin' ] && exit 0
 
