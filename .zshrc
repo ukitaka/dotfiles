@@ -1,15 +1,21 @@
 #opt
+setopt append_history
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
 setopt auto_menu
 setopt correct
 setopt auto_name_dirs
 setopt auto_remove_slash
-setopt extended_history
-setopt hist_ignore_dups
 setopt pushd_ignore_dups
 setopt rm_star_silent
 setopt sun_keyboard_hack
 setopt extended_glob
-setopt hist_ignore_all_dups
 setopt no_beep
 setopt sh_word_split
 setopt auto_param_keys
@@ -19,17 +25,20 @@ setopt list_types
 setopt no_case_glob
 setopt complete_in_word
 setopt prompt_subst
+
 PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
 
 if [[ -f $HOME/.zplug/init.zsh ]]; then
-  source ~/.zplug/init.zsh
+  source $HOME/.zplug/init.zsh
 
   # plugins
   zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
   zplug "mollifier/cd-gitroot"
   zplug "zsh-users/zsh-completions"
+  zplug "zsh-users/zsh-syntax-highlighting"
   zplug "zsh-users/zsh-history-substring-search"
   zplug "plugins/history", from:oh-my-zsh
+  zplug "plugins/history-substring-search", from:oh-my-zsh
   zplug "plugins/brew",    from:oh-my-zsh, if:"which brew"
   zplug "plugins/tmux",    from:oh-my-zsh, if:"which tmux"
 
@@ -44,6 +53,13 @@ fi
 autoload -U compinit && compinit
 autoload -U colors && colors
 autoload -U add-zsh-hook
+
+# history
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # General Settings
 export EDITOR=vim        # エディタをvimに設定
