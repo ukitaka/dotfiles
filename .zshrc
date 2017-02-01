@@ -46,7 +46,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
     zplug install
   fi
 
-  zplug load --verbose
+  zplug load
 fi
 
 # load
