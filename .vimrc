@@ -31,38 +31,20 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle "Shougo/neosnippet-snippets"
 NeoBundle 'unite.vim'
 NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'syui/wauto.vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
-NeoBundle 'motemen/xslate-vim'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle "tyru/caw.vim"
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'basyura/unite-rails'
 NeoBundle 'rhysd/committia.vim'
-NeoBundle '5t111111/neat-json.vim'
 NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'gre/play2vim'
 NeoBundle 'derekwyatt/vim-sbt'
-NeoBundle 'stephpy/vim-yaml'
-NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'pbrisbin/vim-syntax-shakespeare'
-NeoBundle 'eagletmt/neco-ghc'
-NeoBundle 'eagletmt/unite-haddock'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -104,14 +86,8 @@ set autowrite
 
 " color setting
 " -----------------------------------
-"color yuroyoro256
 set background=dark
-"colorscheme Tomorrow-Night
 colorscheme hybrid
-"set t_Co=256
-"set t_Sf=[3%dm
-"set t_Sb=[4%dm
-"hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
 
 
 " key-mapping
@@ -307,3 +283,4 @@ map <silent> [Tag]c :tablast <bar> tabnew<CR>
 map <silent> [Tag]x :tabclose<CR> 
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
+
