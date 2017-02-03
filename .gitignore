@@ -1,5 +1,5 @@
 .DS_Store
-.vim/dein
+.vim/bundle
 .vim/plugins
 .vim/.netrwhist
 tags
