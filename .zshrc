@@ -50,7 +50,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
 fi
 
 # load
-autoload -U compinit && compinit
+# autoload -U compinit && compinit
 autoload -U colors && colors
 autoload -U add-zsh-hook
 
