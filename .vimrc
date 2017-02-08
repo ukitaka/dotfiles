@@ -41,7 +41,6 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle "tyru/caw.vim"
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
