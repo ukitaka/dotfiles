@@ -44,6 +44,8 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
+NeoBundle 'b1narykid/llvm.vim'
+NeoBundle 'zchee/vim-swift-syntax'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -240,9 +242,6 @@ vmap <C-i> <Plug>(caw:i:toggle)
 nmap :<C-u>rc :<C-u>Rcontroller
 nmap :<C-u>rm :<C-u>Rmodel
 nmap :<C-u>rv :<C-u>Rview
-
-
-
 
 " tab setting
 " ------------------------------------

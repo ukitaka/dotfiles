@@ -6,4 +6,4 @@ imap <C-j> <esc>
 vmap <C-j> <esc>
 nmap == ==<CR>
 
-set blinkcursor
+" set blinkcursor

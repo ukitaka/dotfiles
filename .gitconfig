@@ -74,4 +74,7 @@
     plrq = pull-request
     cmp  = compare
 
-    sd   = !git stash -u && git stash drop
+  # stash drop
+    sd = !git stash -u && git stash drop
+[grep]
+	lineNumber = true
