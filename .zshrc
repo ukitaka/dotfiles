@@ -62,8 +62,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # General Settings
-export EDITOR=vim        # エディタをvimに設定
-export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
+export EDITOR=vim
+export LANG=ja_JP.UTF-8
 
 # Colors
 export TERM=xterm-256color
