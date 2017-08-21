@@ -46,6 +46,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
 NeoBundle 'b1narykid/llvm.vim'
 NeoBundle 'zchee/vim-swift-syntax'
+NeoBundle 'GEverding/vim-hocon'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -190,6 +191,8 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.gradle setlocal ts=4 sw=4 sts=4 filetype=groovy
     autocmd BufNew,BufRead,WinEnter *.yml    setlocal ts=2 sw=2 sts=2 filetype=yml
+    autocmd BufNew,BufRead,WinEnter *.rabl   setlocal ts=2 sw=2 sts=2 filetype=ruby
+    autocmd BufNew,BufRead,WinEnter *.conf   setlocal ts=2 sw=2 sts=2 filetype=hocon
 augroup END
 
 " tags
