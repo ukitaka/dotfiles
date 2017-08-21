@@ -47,6 +47,7 @@ NeoBundle 'derekwyatt/vim-sbt'
 NeoBundle 'b1narykid/llvm.vim'
 NeoBundle 'zchee/vim-swift-syntax'
 NeoBundle 'GEverding/vim-hocon'
+NeoBundle 'rust-lang/rust.vim'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
             \    'depends': ['Shougo/vimproc'],
@@ -284,4 +285,10 @@ map <silent> [Tag]c :tablast <bar> tabnew<CR>
 map <silent> [Tag]x :tabclose<CR> 
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
+
+" quickrun
+let g:quickrun_config = { }
+autocmd BufNewFile,BufRead *.crs setf rust
+autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
+autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo script %s -- %a'}
 
