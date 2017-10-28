@@ -3,6 +3,11 @@ if [ -d $HOME/.anyenv ]; then
   eval "$(anyenv init -)"
 fi
 
+# rust
+if [ -d $HOME/.cargo/bin ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # tools
 if [ -d $HOME/Development/tools/bin ]; then
   export PATH="$HOME/Development/tools/bin:$PATH"
