@@ -13,3 +13,5 @@ if [ -d $HOME/Development/tools/bin ]; then
   export PATH="$HOME/Development/tools/bin:$PATH"
 fi
 
+# nvim
+export XDG_CONFIG_HOME=$HOME/dotfiles
