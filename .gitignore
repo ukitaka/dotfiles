@@ -2,6 +2,7 @@
 .vim/bundle
 .vim/plugins
 .vim/.netrwhist
+nvim/.netrwhist
 tags
 nvim/dein.vim/*
 !.gitkeep
