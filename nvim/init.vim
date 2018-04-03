@@ -29,7 +29,6 @@ colorscheme hybrid
 
 " general
 " ------------------------------------
-set paste
 set cindent
 set expandtab
 set autoindent
