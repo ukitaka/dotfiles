@@ -3,4 +3,5 @@
 .vim/plugins
 .vim/.netrwhist
 tags
-
+nvim/dein.vim/*
+!.gitkeep

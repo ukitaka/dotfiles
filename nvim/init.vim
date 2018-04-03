@@ -2,12 +2,12 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=~/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/dotfiles/nvim/dein.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/dotfiles/.vim/dein')
-  call dein#begin('~/dotfiles/.vim/dein')
+if dein#load_state('~/dotfiles/nvim/dein.vim')
+  call dein#begin('~/dotfiles/nvim/dein.vim')
 
-  call dein#add('~/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/dotfiles/nvim/dein.vim/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/neomru.vim')
