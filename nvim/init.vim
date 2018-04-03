@@ -30,8 +30,28 @@ map == ==<CR>
 nnoremap <silent> <Space><Space> :<C-u>source ~/dotfiles/nvim/init.vim<CR>
 nnoremap <silent> <Space>o :only<CR>
 
-" unite
+" denite
 " ------------------------------------
 nnoremap <silent> :uf :<C-u>Denite -buffer-name=files file<CR>
 nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer file_mru file<CR>
+
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-j>',
+      \ '<denite:move_to_next_line>',
+      \ 'noremap'
+      \)
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-k>',
+      \ '<denite:move_to_previous_line>',
+      \ 'noremap'
+      \)
+
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-q>',
+      \ '<denite:quit>',
+      \ 'noremap'
+      \)
 
