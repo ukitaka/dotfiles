@@ -40,8 +40,8 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 
 " denite
 " ------------------------------------
-nnoremap <silent> :uf :<C-u>Denite -buffer-name=files file<CR>
-nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer file_mru file<CR>
+nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal file<CR>
+nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal file_mru file<CR>
 
 call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
