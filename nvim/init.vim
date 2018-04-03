@@ -24,6 +24,7 @@ syntax enable
 set background=dark
 colorscheme hybrid
 
+
 " key-mapping
 " ------------------------------------
 imap <C-j> <esc>
@@ -34,6 +35,8 @@ imap <C-a> <Home>
 map == ==<CR>
 nnoremap <silent> <Space><Space> :<C-u>source ~/dotfiles/nvim/init.vim<CR>
 nnoremap <silent> <Space>o :only<CR>
+
+autocmd FileType help nnoremap <buffer> q <C-w>c
 
 " denite
 " ------------------------------------
