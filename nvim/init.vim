@@ -22,6 +22,8 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('tyru/caw.vim')
   call dein#add('rhysd/committia.vim')
   call dein#add('syui/wauto.vim')
+  call dein#add('syui/wauto.vim')
+  call dein#add('LeafCage/yankround.vim')
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -135,4 +137,18 @@ augroup TabSize
     " iOS
     autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
 augroup END
+
+" autosave setting
+" ------------------------------------
+let g:auto_write = 1
+
+" yank setting
+" -------------------------------------
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+let g:yankround_max_history = 50
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
 
