@@ -62,11 +62,11 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 
 " denite
 " ------------------------------------
-nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal file<CR>
-nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert file_rec<CR>
-nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert grep<CR>
-nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal file_mru file<CR>
-nnoremap <silent> :ub :<C-u>Denite -buffer-name=files buffer -mode=normal buffer<CR>
+nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal -direction=dynamictop file<CR>
+nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert -direction=dynamictop file_rec<CR>
+nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert -direction=dynamictop grep<CR>
+nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop file_mru file<CR>
+nnoremap <silent> :ub :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop buffer<CR>
 
 call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
