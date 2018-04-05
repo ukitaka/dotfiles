@@ -10,12 +10,18 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('~/dotfiles/nvim/dein.vim/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tpope/vim-fugitive')
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   call dein#end()
   call dein#save_state()
@@ -95,4 +101,8 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 nnoremap <silent> <Space>o :only<CR>
+
+" deoplete
+" ------------------------------------
+let g:deoplete#enable_at_startup = 1
 
