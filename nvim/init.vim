@@ -11,6 +11,7 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
 
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/deol.nvim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/vinarise')
   call dein#add('w0ng/vim-hybrid')
