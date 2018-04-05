@@ -42,8 +42,8 @@ set history=10000
 set showcmd
 set wrap
 set incsearch
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set laststatus=2
 set autowrite
 
