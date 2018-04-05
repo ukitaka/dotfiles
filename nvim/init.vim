@@ -68,6 +68,7 @@ nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert -direction=dy
 nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert -direction=dynamictop grep<CR>
 nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop file_mru file<CR>
 nnoremap <silent> :ub :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop buffer<CR>
+nnoremap <silent> :uo :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop outline<CR>
 
 call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
