@@ -17,6 +17,8 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('w0rp/ale')
+  call dein#add('tyru/caw.vim')
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -106,3 +108,7 @@ nnoremap <silent> <Space>o :only<CR>
 " ------------------------------------
 let g:deoplete#enable_at_startup = 1
 
+" caw setting
+" ------------------------------------
+nmap <C-i> <Plug>(caw:hatpos:toggle)
+vmap <C-i> <Plug>(caw:hatpos:toggle)
