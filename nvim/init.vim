@@ -12,6 +12,7 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/vinarise')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -19,6 +20,8 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('tpope/vim-fugitive')
   call dein#add('w0rp/ale')
   call dein#add('tyru/caw.vim')
+  call dein#add('rhysd/committia.vim')
+  call dein#add('syui/wauto.vim')
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -112,3 +115,24 @@ let g:deoplete#enable_at_startup = 1
 " ------------------------------------
 nmap <C-i> <Plug>(caw:hatpos:toggle)
 vmap <C-i> <Plug>(caw:hatpos:toggle)
+
+" indent setting
+" --------------------------------------
+
+augroup TabSize
+    autocmd! TabSize
+    " Ruby
+    autocmd BufNew,BufRead,WinEnter *.zshrc  setlocal ts=2 sw=2 sts=2
+    autocmd BufNew,BufRead,WinEnter *.rb     setlocal ts=2 sw=2 sts=2
+    autocmd BufNew,BufRead,WinEnter *.erb    setlocal ts=2 sw=2 sts=2
+    autocmd BufNew,BufRead,WinEnter Rakefile setlocal ts=2 sw=2 sts=2 filetype=ruby
+    autocmd BufNew,BufRead,WinEnter Gemfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
+    " Perl
+    autocmd BufNew,BufRead,WinEnter *.pl     setlocal ts=4 sw=4 sts=4
+    autocmd BufNew,BufRead,WinEnter *.pm     setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
+    " iOS
+    autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
+augroup END
+
