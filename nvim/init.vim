@@ -15,6 +15,7 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('thinca/vim-quickrun')
+  call dein#add('tpope/vim-fugitive')
 
   call dein#end()
   call dein#save_state()
