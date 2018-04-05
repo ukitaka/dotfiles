@@ -63,6 +63,7 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 " denite
 " ------------------------------------
 nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal file<CR>
+nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert file_rec<CR>
 nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert grep<CR>
 nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal file_mru file<CR>
 
