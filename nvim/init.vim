@@ -28,6 +28,7 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
   call dein#add('landaire/deoplete-swift')
   call dein#add('kballard/vim-swift')
   call dein#add('keith/swift.vim')
+  call dein#add('vim-perl/vim-perl')
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
