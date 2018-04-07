@@ -81,8 +81,6 @@ nnoremap <silent> <Space>o :only<CR>
 " ------------------------------------
 nnoremap <silent> :ut :<C-u>Deol -split <CR>
 tnoremap <silent> :ut <C-\><C-n>:q<CR>
-tnoremap <C-j> <C-\><C-n>:q<CR>
-tnoremap <esc> <C-\><C-n>:q<CR>
 
 autocmd FileType help nnoremap <buffer> q <C-w>c
 
