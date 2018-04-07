@@ -146,6 +146,8 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
     " iOS
     autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
+    " binary
+    autocmd BufNew,BufRead,WinEnter *.o      :Vinarise
 augroup END
 
 " autosave setting
