@@ -11,7 +11,7 @@ if dein#load_state('~/dotfiles/nvim/dein.vim')
 
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deoplete.nvim')
-  " call dein#add('Shougo/deol.nvim')
+  call dein#add('Shougo/deol.nvim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/vinarise')
   call dein#add('w0ng/vim-hybrid')
@@ -76,6 +76,13 @@ imap <C-a> <Home>
 map == ==<CR>
 nnoremap <silent> <Space><Space> :<C-u>source ~/dotfiles/nvim/init.vim<CR>
 nnoremap <silent> <Space>o :only<CR>
+
+" terminal
+" ------------------------------------
+nnoremap <silent> :ut :<C-u>Deol -split <CR>
+tnoremap <silent> :ut <C-\><C-n>:q<CR>
+tnoremap <C-j> <C-\><C-n>:q<CR>
+tnoremap <esc> <C-\><C-n>:q<CR>
 
 autocmd FileType help nnoremap <buffer> q <C-w>c
 
