@@ -65,6 +65,7 @@ set shiftwidth=2
 set tabstop=2
 set laststatus=2
 set autowrite
+set cursorcolumn
 
 " key-mapping
 " ------------------------------------
