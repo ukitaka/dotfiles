@@ -3,32 +3,14 @@ if &compatible
 endif
 
 set runtimepath+=~/dotfiles/nvim/dein.vim/repos/github.com/Shougo/dein.vim
+let s:dein_dir = "~/dotfiles/nvim/dein.vim"
+let s:toml_dir = "~/dotfiles/nvim/toml"
 
-if dein#load_state('~/dotfiles/nvim/dein.vim')
-  call dein#begin('~/dotfiles/nvim/dein.vim')
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-  call dein#add('~/dotfiles/nvim/dein.vim/repos/github.com/Shougo/dein.vim')
-
-  call dein#add('Shougo/denite.nvim')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/deol.nvim')
-  call dein#add('Shougo/neomru.vim')
-  call dein#add('Shougo/vinarise')
-  call dein#add('w0ng/vim-hybrid')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('w0rp/ale')
-  call dein#add('tyru/caw.vim')
-  call dein#add('rhysd/committia.vim')
-  call dein#add('syui/wauto.vim')
-  call dein#add('syui/wauto.vim')
-  call dein#add('LeafCage/yankround.vim')
-  call dein#add('landaire/deoplete-swift')
-  call dein#add('kballard/vim-swift')
-  call dein#add('keith/swift.vim')
-  call dein#add('vim-perl/vim-perl')
+  call dein#add(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
+  call dein#load_toml(s:toml_dir . '/default.toml', {'lazy': 0})
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
