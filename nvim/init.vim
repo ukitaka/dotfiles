@@ -68,21 +68,6 @@ tnoremap <silent> :ut <C-\><C-n>:q<CR>
 
 autocmd FileType help nnoremap <buffer> q <C-w>c
 
-" denite
-" ------------------------------------
-nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal -direction=dynamictop file<CR>
-nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert -direction=dynamictop file_rec<CR>
-nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert -direction=dynamictop grep<CR>
-nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop file_mru file<CR>
-nnoremap <silent> :ub :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop buffer<CR>
-nnoremap <silent> :uo :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop outline<CR>
-
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-q>', '<denite:quit>', 'noremap')
-
 " vim-airline
 " ------------------------------------
 let g:airline_theme='bubblegum'
