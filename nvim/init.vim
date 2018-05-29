@@ -11,6 +11,7 @@ if dein#load_state(s:dein_dir)
 
   call dein#add(s:dein_dir . '/repos/github.com/Shougo/dein.vim')
   call dein#load_toml(s:toml_dir . '/default.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '/lazy_default.toml', {'lazy': 1})
 
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
