@@ -29,14 +29,5 @@ repo = 'syui/wauto.vim'
 repo = 'LeafCage/yankround.vim'
 
 [[plugins]]
-repo = 'landaire/deoplete-swift'
-
-[[plugins]]
-repo = 'kballard/vim-swift'
-
-[[plugins]]
-repo = 'keith/swift.vim'
-
-[[plugins]]
 repo = 'vim-perl/vim-perl'
 
