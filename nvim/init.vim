@@ -145,6 +145,7 @@ augroup TabSize
     autocmd BufNew,BufRead,WinEnter *.pm     setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.psgi   setlocal ts=4 sw=4 sts=4 filetype=perl
     autocmd BufNew,BufRead,WinEnter *.t      setlocal ts=4 sw=4 sts=4 filetype=perl
+    autocmd BufNew,BufRead,WinEnter *.tt     setlocal ts=2 sw=2 sts=2 filetype=tt2
     " iOS
     autocmd BufNew,BufRead,WinEnter Podfile  setlocal ts=2 sw=2 sts=2 filetype=ruby
     " binary
