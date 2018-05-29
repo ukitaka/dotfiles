@@ -1,16 +1,4 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
-repo = 'Shougo/deol.nvim'
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/vinarise'
-
-[[plugins]]
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]

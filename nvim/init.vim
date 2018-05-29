@@ -13,11 +13,6 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml_dir . '/default.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/lazy_default.toml', {'lazy': 1})
 
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
   call dein#end()
   call dein#save_state()
 endif
@@ -61,13 +56,6 @@ map == ==<CR>
 nnoremap <silent> <Space><Space> :<C-u>source ~/dotfiles/nvim/init.vim<CR>
 nnoremap <silent> <Space>o :only<CR>
 
-" terminal
-" ------------------------------------
-nnoremap <silent> :ut :<C-u>Deol -split <CR>
-tnoremap <silent> :ut <C-\><C-n>:q<CR>
-
-autocmd FileType help nnoremap <buffer> q <C-w>c
-
 " vim-airline
 " ------------------------------------
 let g:airline_theme='bubblegum'
@@ -87,10 +75,6 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 nnoremap <silent> <Space>o :only<CR>
-
-" deoplete
-" ------------------------------------
-let g:deoplete#enable_at_startup = 1
 
 " caw setting
 " ------------------------------------
