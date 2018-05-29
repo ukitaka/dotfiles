@@ -1,12 +1,15 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+depends =[
+  'neomru.vim'
+]
 hook_add = '''
 nnoremap <silent> :uf :<C-u>Denite -buffer-name=files -mode=normal -direction=dynamictop file<CR>
 nnoremap <silent> :ur :<C-u>Denite -buffer-name=files -mode=insert -direction=dynamictop file_rec<CR>
 nnoremap <silent> :ug :<C-u>DeniteCursorWord -buffer-name=files -mode=insert -direction=dynamictop grep<CR>
-nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop file_mru file<CR>
 nnoremap <silent> :ub :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop buffer<CR>
 nnoremap <silent> :uo :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop outline<CR>
+nnoremap <silent> :ua :<C-u>Denite -buffer-name=files buffer -mode=normal -direction=dynamictop file_mru file<CR>
 '''
 
 hook_post_source = '''
@@ -33,4 +36,3 @@ autocmd FileType help nnoremap <buffer> q <C-w>c
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
-
