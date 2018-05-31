@@ -13,6 +13,7 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml_dir . '/default.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/lazy_default.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/swift.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
 
   call dein#end()
   call dein#save_state()
