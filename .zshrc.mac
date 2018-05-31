@@ -8,6 +8,12 @@ if [ -d $HOME/.cargo/bin ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# golang
+if [ -d $HOME/Development/go ]; then
+  export GOPATH="$HOME/Development/go"
+fi
+
+
 # tools
 if [ -d $HOME/Development/tools/bin ]; then
   export PATH="$HOME/Development/tools/bin:$PATH"
