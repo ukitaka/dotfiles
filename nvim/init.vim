@@ -64,6 +64,10 @@ let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 
+" quick run
+" ------------------------------------
+nnoremap <silent> <Space>r :<C-u>QuickRun -outputter/buffer/split ":botright"<CR>
+
 " tab
 " ------------------------------------
 noremap    [Tag] <Nop> 
