@@ -4,4 +4,5 @@ on_ft = 'go'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
+build = 'make'
 on_ft = 'go'
