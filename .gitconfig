@@ -7,6 +7,9 @@
     autocrlf = input
     excludesfile = ~/.gitignore
 
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
 [http]
     sslVerify = false
 
