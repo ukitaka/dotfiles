@@ -3,7 +3,7 @@
 if [ "$(uname)" == 'Darwin' ]; then
   DOT_FILES=( .zshrc .zshrc.mac .vimrc .vim .gvimrc .xvimrc .tmux.conf .ideavimrc .gitconfig .gitignore)
 else
-  DOT_FILES=( .zshrc .vimrc .vim .gvimrc .xvimrc .tmux.conf .ideavimrc .gitconfig .gitignore)
+  DOT_FILES=( .zshrc .vimrc .vim .tmux.conf .gitconfig .gitignore)
 fi
 
 for file in ${DOT_FILES[@]}
