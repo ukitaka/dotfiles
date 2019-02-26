@@ -31,3 +31,5 @@ repo = 'LeafCage/yankround.vim'
 [[plugins]]
 repo = 'vim-perl/vim-perl'
 
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
