@@ -28,8 +28,10 @@ setopt prompt_subst
 
 PROMPT='%B%F{yellow}(%m) %B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%% '
 
-if [[ -f $HOME/.zplug/init.zsh ]]; then
-  source $HOME/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+
+if [[ -f $ZPLUG_HOME/init.zsh ]]; then
+  source $ZPLUG_HOME/init.zsh
 
   # plugins
   zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
