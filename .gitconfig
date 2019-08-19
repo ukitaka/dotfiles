@@ -3,7 +3,7 @@
 	email = yuki.takahashi.1126@gmail.com
 
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
     excludesfile = ~/.gitignore
 
